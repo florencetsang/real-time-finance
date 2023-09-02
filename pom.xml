@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.1.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.github.florencetsang</groupId>
+	<artifactId>real-time-finance</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>real-time-finance</name>
+	<description>Real time finance</description>
+
+	<repositories>
+		<repository>
+			<id>Maven Central</id>
+			<url>https://repo.maven.apache.org/maven2/</url>
+		</repository>
+
+		<repository>
+			<id>Bintray jCenter</id>
+			<url>https://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<java.version>17</java.version>
+		<jraw.version>1.1.0</jraw.version>
+		<spring.kafka.version>2.8.11</spring.kafka.version>
+		<kafka.version>3.3.1</kafka.version>
+		<kafka.connect.maven.plugin.version>0.11.1</kafka.connect.maven.plugin.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<version>${spring.kafka.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>connect-api</artifactId>
+			<version>${kafka.version}</version>
+			<!--<scope>provided</scope>-->
+		</dependency>
+		<dependency>
+			<groupId>net.dean.jraw</groupId>
+			<artifactId>JRAW</artifactId>
+			<version>${jraw.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<executions>
+					<!-- Replacing default-compile as it is treated specially by maven -->
+					<execution>
+						<id>default-compile</id>
+						<phase>none</phase>
+					</execution>
+					<!-- Replacing default-testCompile as it is treated specially by maven -->
+					<execution>
+						<id>default-testCompile</id>
+						<phase>none</phase>
+					</execution>
+					<execution>
+						<id>java-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>java-test-compile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>io.confluent</groupId>-->
+<!--				<artifactId>kafka-connect-maven-plugin</artifactId>-->
+<!--				<version>${kafka.connect.maven.plugin.version}</version>-->
+<!--				<executions>-->
+<!--					<execution>-->
+<!--						<id>Confluent Hub package</id>-->
+<!--						<goals>-->
+<!--							<goal>kafka-connect</goal>-->
+<!--						</goals>-->
+<!--						<configuration>-->
+<!--							<description><![CDATA[-->
+<!--                                The source connector consumes posts and comments from Reddit in real time. It's-->
+<!--                                possible to read comments from one collection of subreddits and posts from a different-->
+<!--                                collection, and <a href="https://www.reddit.com/r/all/">r/all</a> can be read from for-->
+<!--                                either.-->
+
+<!--                                Separate topics are used for posts and comments; they default to reddit-posts and-->
+<!--                                reddit-comments respectively but can be configured differently if necessary.-->
+
+<!--                                <a href="https://github.com/mattbdean/jraw">JRAW</a> is used to continuously stream new-->
+<!--                                posts and comments; many thanks go to-->
+<!--                                <a href="https://github.com/mattbdean">Matt Dean</a> for creating that excellent-->
+<!--                                library.-->
+
+<!--                                This connector is currently intended for development and entertainment purposes only and-->
+<!--                                is not recommended or endorsed for production use cases.-->
+<!--                            ]]></description>-->
+<!--							<documentationUrl>${project.scm.url}</documentationUrl>-->
+<!--							<sourceUrl>${project.scm.url}</sourceUrl>-->
+<!--							<logo>${project.basedir}/logos/reddit.png</logo>-->
+
+<!--							<ownerUsername>C0urante</ownerUsername>-->
+<!--							<ownerName>Chris Egerton</ownerName>-->
+<!--							<ownerType>user</ownerType>-->
+<!--							<ownerLogo>${project.basedir}/logos/aku.jpeg</ownerLogo>-->
+
+<!--							<supportProviderName>Open Source Community</supportProviderName>-->
+<!--							<supportUrl>${project.scm.url}/issues</supportUrl>-->
+<!--							<supportSummary>-->
+<!--								This is an open-source project supported and maintained on a best-effort by the-->
+<!--								community and its creator.-->
+<!--							</supportSummary>-->
+<!--							<supportLogo>${project.basedir}/logos/github.png</supportLogo>-->
+
+<!--							<componentTypes>-->
+<!--								<componentType>source</componentType>-->
+<!--							</componentTypes>-->
+
+<!--							<confluentControlCenterIntegration>true</confluentControlCenterIntegration>-->
+
+<!--							<licenses>-->
+<!--								<license>-->
+<!--									<name>DWTFPL Version 2</name>-->
+<!--									<url>http://www.wtfpl.net/txt/copying/</url>-->
+<!--									<logo>${project.basedir}/logos/wtfpl.png</logo>-->
+<!--								</license>-->
+<!--							</licenses>-->
+
+<!--							<tags>-->
+<!--								<tag>reddit</tag>-->
+<!--								<tag>stream</tag>-->
+<!--								<tag>live</tag>-->
+<!--								<tag>jraw</tag>-->
+<!--								<tag>social</tag>-->
+<!--								<tag>network</tag>-->
+<!--							</tags>-->
+<!--						</configuration>-->
+<!--					</execution>-->
+<!--				</executions>-->
+<!--			</plugin>-->
+		</plugins>
+	</build>
+
+</project>
