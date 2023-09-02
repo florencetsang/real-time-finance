@@ -1,0 +1,12 @@
+com\github\florencetsang\realtimefinance\reddit\Reddit.class
+com\github\florencetsang\realtimefinance\converters\PostSourceRecordConverter.class
+com\github\florencetsang\realtimefinance\version\Version.class
+com\github\florencetsang\realtimefinance\converters\CommentSourceRecordConverter.class
+com\github\florencetsang\realtimefinance\producers\PostsStreamReader.class
+com\github\florencetsang\realtimefinance\producers\StreamReader.class
+com\github\florencetsang\realtimefinance\reddit\RedditSourceConnector.class
+com\github\florencetsang\realtimefinance\reddit\RedditSourceTask.class
+com\github\florencetsang\realtimefinance\reddit\RedditSourceConnectorConfig.class
+com\github\florencetsang\realtimefinance\converters\SourceRecordConverter.class
+com\github\florencetsang\realtimefinance\producers\CommentsStreamReader.class
+com\github\florencetsang\realtimefinance\RealTimeFinanceApplication.class

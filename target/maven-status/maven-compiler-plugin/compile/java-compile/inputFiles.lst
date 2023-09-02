@@ -1,0 +1,12 @@
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\RealTimeFinanceApplication.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\converters\SourceRecordConverter.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\producers\PostsStreamReader.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\producers\StreamReader.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\reddit\RedditSourceConnectorConfig.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\reddit\RedditSourceConnector.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\converters\CommentSourceRecordConverter.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\converters\PostSourceRecordConverter.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\reddit\RedditSourceTask.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\reddit\Reddit.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\producers\CommentsStreamReader.java
+C:\Users\Florence\Documents\Repo\real-time-finance\real-time-finance\src\main\java\com\github\florencetsang\realtimefinance\version\Version.java
